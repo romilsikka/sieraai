@@ -1,38 +1,48 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.teamName {
+  height: 100px;
+  border: 1px solid;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.market {
+  height: 100px;
+  border: 1px solid;
+  margin-bottom: 10px;
+}
+.selectionWrapper {
+  justify-content: space-around;
+  display: flex;
+  height: 50px;
+  margin-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.selection {
+  border: 1px solid;
+  display: flex;
+  width: 250px;
+  justify-content: center;
+  flex-direction: column;
+}
+.selection :hover {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menu {
+  width: 300px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: lightgray;
+}
+.menuList {
+  display: flex;
+  flex-direction: column;
+}
+.deleteButton{
+  margin-bottom: 20px;
 }
