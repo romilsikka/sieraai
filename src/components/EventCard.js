@@ -3,7 +3,7 @@ import MarketCard from "./MarketCard";
 import "../App.css";
 
 const EventCard = (props) => {
-  const { data, track, handleSelect } = props;
+  const { data = [], track = {}, handleSelect = () => {} } = props;
 
   return (
     <>

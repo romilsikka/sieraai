@@ -3,7 +3,7 @@ import SelectionCard from "./SelectionCard";
 import "../App.css";
 
 const MarketCard = (props) => {
-  const { data, track, handleSelect } = props;
+  const { data = [], track = {}, handleSelect = () => {} } = props;
 
   return (
     <div className="test">
