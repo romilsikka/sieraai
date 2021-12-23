@@ -3,12 +3,12 @@ import "../App.css";
 
 const Menu = (props) => {
   const { open = false, track = {}, deleteSelection = () => {} } = props;
-  let arr = Object.keys(track);
+  let listOfBets = Object.keys(track);
   return (
     <>
       {open && (
         <div className="menu">
-          {arr.map((item) => {
+          {listOfBets.map((item) => {
             return (
               <div className="menuList" key={item}>
                 <span>

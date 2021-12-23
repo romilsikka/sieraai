@@ -10,6 +10,8 @@ function App() {
     isOpen: false,
   });
 
+  const {track , isOpen, teamList} = state;
+
   useEffect(() => {
     fetch("http://www.mocky.io/v2/59f08692310000b4130e9f71")
       .then((response) => response.json())
@@ -23,10 +25,10 @@ function App() {
     selectionPrice,
     marketName
   ) => {
-    const copy = { ...state.track };
+    const copy = { ...track };
     if (
-      state.track[marketId] &&
-      state.track[marketId].selectionId === selectionId
+      track[marketId] &&
+      track[marketId].selectionId === selectionId
     ) {
       delete copy[marketId];
       setState({
@@ -37,7 +39,7 @@ function App() {
       setState({
         ...state,
         track: {
-          ...state.track,
+          ...track,
           [marketId]: { selectionId, selectionName, selectionPrice, marketName },
         },
       });
@@ -45,7 +47,7 @@ function App() {
   };
 
   const deleteSelection = (marketId) => {
-    let copy = { ...state.track };
+    let copy = { ...track };
     delete copy[marketId];
     setState({
       ...state,
@@ -56,27 +58,26 @@ function App() {
   const handleOpen = () => {
     setState({
       ...state,
-      isOpen: !state.isOpen,
+      isOpen: !isOpen,
     });
   };
-  console.log(state);
   return (
     <div className="App">
       <div className="buttonWrapper">
         <button onClick={handleOpen} className="openButton">
-          Open
+          {isOpen ? 'Close' : 'Open'}
         </button>
       </div>
       <EventCard
-        data={state.teamList}
+        data={teamList}
         handleSelect={handleSelect}
-        track={state.track}
+        track={track}
       />
       <Menu
         deleteSelection={deleteSelection}
-        open={state.isOpen}
-        track={state.track}
-        data={state.teamList}
+        open={isOpen}
+        track={track}
+        data={teamList}
       />
     </div>
   );
