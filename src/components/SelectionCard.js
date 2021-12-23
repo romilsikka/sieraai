@@ -33,4 +33,4 @@ const SelectionCard = (props) => {
   );
 };
 
-export default SelectionCard;
+export default React.memo(SelectionCard);

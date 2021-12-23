@@ -39,4 +39,4 @@ const EventCard = (props) => {
   );
 };
 
-export default EventCard;
+export default React.memo(EventCard);

@@ -32,4 +32,4 @@ const MarketCard = (props) => {
   );
 };
 
-export default MarketCard;
+export default React.memo(MarketCard);
